@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <!-- Page Title -->
+        <title>House Price Prediction System</title>
+
+        <!-- Compressed Styles -->
+        <link href="css/slides.min.css?424341" rel="stylesheet" type="text/css">
+
+<!-- Custom Styles -->
+<!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
+
+<!-- jQuery 3.4.1 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Compressed Scripts -->
+        <script src="js/slides.min.js?424341" type="text/javascript"></script>
+
+<!-- Custom Scripts -->
+<!-- <script src="js/custom.js" type="text/javascript"></script> -->
+
+<!-- Fonts and Material Icons -->
+        <link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,800|Montserrat:200|Montserrat:400|Material+Icons"/>
+        <style type="text/css">
+                                .slides,
+                        .slides p {
+                                font-family: 'Montserrat', sans-serif;
+                                font-weight: 300;
+                        }
+                                        .slides h1,
+                        .slides h2,
+                        .slides h3,
+                        .slides h4,
+                        .slides h5,
+                        .slides h6 {
+                                font-family: 'Montserrat', sans-serif;
+                                font-weight: 200;
+                        }
+                                        .slides .button,
+                        .slides .slides-form {
+                                font-family: 'Montserrat', sans-serif;
+                                font-weight: 400;
+  }
+                </style>
+</head>
+<body class="slides noPreload animated">
+
+<!-- SVG Library -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <symbol id="logo" viewBox="0 0 106 31"><title>Slides Framework</title><path d="M17.413 14.04c-.56-5.84-5.6-7-8.52-7-4.6 0-8.6 2.92-8.6 7.52 0 3 2.4 4.88 5.28 5.8 4.24 1.64 5.88 1.84 5.88>
+
+  <symbol id="logo-icon" viewBox="0 0 50 41"><title>Slides Framework</title><path d="M4,12h42c2.2,0,4,1.8,4,4v21c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V16C0,13.8,1.8,12,4,12z"/><path opacity=">
+
+  <symbol id="close" viewBox="0 0 30 30"><path d="M15 0c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15zm5.7 19.3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3s-.5-.1-.7-.3l-4.3-4.3-4.3 4.3c-.2>
+
+  <symbol id="close-small" viewBox="0 0 11 11"><path d="M6.914 5.5l3.793-3.793c.391-.391.391-1.023 0-1.414s-1.023-.391-1.414 0l-3.793 3.793-3.793-3.793c-.391-.391-1.023-.391-1.414 0s-.391 >
+
+  <symbol id="arrow-left" viewBox="0 0 29 56"><path d="M28.7.3c.4.4.4 1 0 1.4l-26.3 26.3 26.3 26.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-27-27c-.4-.4-.4-1 0-1.4l27-27c.3-.3 1-.4 1.4 0z"/></symbo>
+
+  <symbol id="arrow-right" viewBox="0 0 29 56"><path d="M.3 55.7c-.4-.4-.4-1 0-1.4l26.3-26.3-26.3-26.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l27 27c.4.4.4 1 0 1.4l-27 27c-.3.3-1 .4-1.4 0z"/></s>
+
+  <symbol id="back" viewBox="0 0 20 20"><path d="M2.3 10.7l5 5c.4.4 1 .4 1.4 0s.4-1 0-1.4l-3.3-3.3h11.6c.6 0 1-.4 1-1s-.4-1-1-1h-11.6l3.3-3.3c.4-.4.4-1 0-1.4-.2-.2-.4-.3-.7-.3s-.5.1-.7.3l->
+
+  <symbol id="menu" viewBox="0 0 18 18"><path d="M16 5h-14c-.6 0-1-.4-1-1 0-.5.4-1 1-1h14c.5 0 1 .4 1 1s-.4 1-1 1zm-14 5h14c.5 0 1-.4 1-1 0-.5-.4-1-1-1h-14c-.6 0-1 .4-1 1s.4 1 1 1zm14 3h-1>
+
+  <symbol id="share" viewBox="0 0 18 18"><path d="M16 8c-.6 0-1 .4-1 1v6h-12v-6c0-.6-.4-1-1-1s-1 .4-1 1v6c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-6c0-.6-.4-1-1-1zm-2.3-2.3c.4-.4.4-1 0-1.4l-4-4c-.>
+
+  <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 18c-.2 0-.5-.1-.7-.3l-11-10c-.4-.4-.4-1-.1-1.4.4-.4 1-.4 1.4-.1l10.4 9.4 10.3-9.4c.4-.4 1-.3 1.4.1.4.4.3 1-.1 1.4l-11 10c-.1.2-.4>
+
+  <symbol id="arrow-up" viewBox="0 0 24 24"><path d="M11.9 5.9c.2 0 .5.1.7.3l11 10c.4.4.4 1 .1 1.4-.4.4-1 .4-1.4.1l-10.4-9.4-10.3 9.4c-.4.4-1 .3-1.4-.1-.4-.4-.3-1 .1-1.4l11-10c.1-.2.4-.3.6>
+
+  <symbol id="arrow-top" viewBox="0 0 18 18"><path d="M15.7 7.3l-6-6c-.4-.4-1-.4-1.4 0l-6 6c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l4.3-4.3v11.6c0 .6.4 1 1 1s1-.4 1-1v-11.6l4.3 4.3c.2.2.4.3.7.3s.5>
+
+  <symbol id="play" viewBox="0 0 30 30"><path d="M7 30v-30l22 15z"/></symbol>
+
+  <symbol id="chat" viewBox="0 0 18 18"><path d="M5,17c-0.2,0-0.3,0-0.4-0.1C4.2,16.7,4,16.4,4,16v-2H2c-1.1,0-2-0.9-2-2V3c0-1.1,0.9-2,2-2h14c1.1,0,2,0.9,2,2v9 c0,1.1-0.9,2-2,2H9.3l-3.7,2.8C>
+
+  <symbol id="mail" viewBox="0 0 18 18"><path d="M16 2h-14c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-10c0-1.1-.9-2-2-2zm0 2v.5l-7 4.3-7-4.4v-.4h14zm-14 10v-7.2l6.5 4c.1.1.3.2.5.2>
+
+  <symbol id="sound-on" viewBox="0 0 18 18"><path d="M8.5,0.1C8.1-0.1,7.7,0,7.4,0.2L3.7,3H2C0.9,3,0,3.9,0,5v6c0,1.1,0.9,2,2,2h1.7l3.7,2.8C7.6,15.9,7.8,16,8,16 c0.2,0,0.3,0,0.4-0.1C8.8,15.7>
+
+  <symbol id="sound-off" viewBox="0 0 18 18"><path d="M15.9,8l1.8-1.8c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-1.8,1.8l-1.8-1.8c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L13.1,8l-1.8,1.8 c-0.4,0.4-0.4,1,0>
+
+ <!-- social -->
+
+
+
+</svg>
+
+<!-- Panel Top #library/panel/panel-top-10.html -->
+<nav class="panel top  ">
+  <div class="sections">
+    <div class="left"><a href="#" title="Hackveda Limited">
+<img src="#" width="82px"/>
+        </a></div>
+
+</nav>
+
+<!-- Sidebar -->
+
+
+<!-- Slide 1 (#08) -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="fix-12-12">
+          <div class="fix-3-12">
+            <h1>House Price Prediction System</h1>
+          </div>
+          <p class="hero fix-9-12 margin-top-2 ae-2"><span class="opacity-8">Machine Learning based house price prediction model with 95% accuracy</span></p>
+          <div class="margin-top-2">
+            <p class="ae-3"><span class="opacity-8">Start house price prediction <b>FREE</b></span></p>
+            <form class="slides-form" action="#">
+<input type="text" class="input-8 ae-4 fromCenter" id="lotsize" placeholder="Enter Lotsize" val=""/>
+
+<input type="text" class="input-8 ae-4 fromCenter" id="bathrms" placeholder="Enter bathrooms" val=""/>
+
+<select id="stories" class="ae-4 fromCenter">
+    <option disabled>Select number of floors</option>
+    <option value="1">1 Floor</option>
+    <option value="2">2 Floors</option>           <option value="3">3 Floors</option>
+    <option value="4">4 Floors</option>
+</select>
+
+<select id="driveway" class="ae-4 fromCenter">
+<option disabled>Does your house has a driveway ?</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+
+<select id="recroom" class="ae-4 fromCenter">
+<option disabled>Does it has a Recreation room ?</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+
+<select id="fullbase" class="ae-4 fromCenter">
+<option disabled>Does it has a full basement ?</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+
+<select id="gashw" class="ae-4 fromCenter">
+<option disabled>Does it has Gas Hot Water ?</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+
+<select id="airco" class="ae-4 fromCenter">
+<option disabled>Does it has Airconditioning ?</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+
+<input type="text" class="input-8 ae-4 fromCenter" id="garagepl" placeholder="Enter Garage Places" val=""/>
+
+<select id="prefarea" class="ae-4 fromCenter">
+<option disabled>Is it in Preferred area of City ?</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+
+<button type="button" class="button blue gradient ae-7 fromCenter" name="button" id="predict_btn">Predict House Price</button>
+
+<h2 id="result"></h2>
+ </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/house.jpg)"></div>
+</section>
+
+<!-- Panel Bottom #13 -->
+<nav class="panel bottom  ">
+  <div class="sections">
+    <div class="center">
+      <ul class="menu crop">
+        <li><a href="http://facebook.com/hackveda" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+        <li><a href="http://twitter.com/hackveda" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+        <li><a href="http://instagram.com/007devansh" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+
+<script>
+$(document).ready(function(){
+
+$("#predict_btn").click(function(){
+
+var lotsize = $("#lotsize").val();
+var bathrms = $("#bathrms").val();
+var stories = $("#stories option:selected").val();
+var driveway = $("#driveway option:selected").val();
+var recroom = $("#recroom option:selected").val();
+var fullbase = $("#fullbase option:selected").val();
+var gashw = $("#gashw option:selected").val();
+var airco = $("#airco option:selected").val();
+var garagepl = $("#garagepl").val();
+var prefarea = $("#prefarea option:selected").val();
+
+$.get("predict.php", {"lotsize":lotsize, "bathrms":bathrms, "stories":stories, "driveway":driveway, "recroom":recroom, "fullbase":fullbase, "gashw":gashw, "airco":airco, "garagepl":garagep>
+
+$("#result").html(response)
+});
+
+});
+
+});
+
+</script>
+
+</html>
